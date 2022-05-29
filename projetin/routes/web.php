@@ -36,3 +36,22 @@ Route::get('/produtos/{id}',
 Route::get('/produtos/{id}/edit', 
     'App\Http\Controllers\ProdutosController@edit');
 
+
+
+Route::get('/estados', 
+    'App\Http\Controllers\EstadosController@index');
+
+Route::get('/estados/create', 
+    'App\Http\Controllers\EstadosController@create');
+
+Route::post('/estados', 
+    'App\Http\Controllers\EstadosController@store');
+
+Route::put('/estados/{id}', 
+    'App\Http\Controllers\EstadosController@update');
+
+Route::get('/estados/{id}', 
+    'App\Http\Controllers\EstadosController@destroy');
+
+Route::get('/estados/{id}/edit', 
+    'App\Http\Controllers\EstadosController@edit');

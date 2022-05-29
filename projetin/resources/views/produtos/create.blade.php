@@ -22,7 +22,7 @@
                 @csrf
                 <input class="form-control" type="text" name="id" id="id" placeholder="Código:" value="{{$produtos->id ?? ''}}" required><br>
                 <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome:" value="{{$produtos->nome ?? ''}}" required><br>
-                <input class="form-control" type="text" name="preco" id="preco" placeholder="Preço:" value="{{$produtos->preco ?? ''}}" required><br>
+                <input class="form-control" type="number" name="preco" id="preco" placeholder="Preço:" value="{{$produtos->preco ?? ''}}" required><br>
                 <input class="btn btn-primary" type="submit" value="@if(isset($produtos)) Editar @else Cadastrar @endif">
             </form>
     </div>

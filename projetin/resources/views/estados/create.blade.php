@@ -1,7 +1,7 @@
 @extends('templates.template')
 
 @section('content')
-    <h1 class="text-center">@if(isset($produtos)) Editar @else Cadastrar @endif</h1> <hr>
+    <h1 class="text-center">@if(isset($estados)) Editar @else Cadastrar @endif</h1> <hr>
 
     <div class="col-8 m-auto">
 
@@ -13,17 +13,17 @@
             </div>
         @endif
 
-        @if(isset($produtos))
-            <form name="formEdit" id="formEdit" method="post" action="{{url("produtos/$produtos->id")}}">
+        @if(isset($estados))
+            <form name="formEdit" id="formEdit" method="post" action="{{url("estados/$estados->id")}}">
                 @method('PUT')
         @else
-            <form name="formCad" id="formCad" method="post" action="{{url('produtos')}}">
+            <form name="formCad" id="formCad" method="post" action="{{url('estados')}}">
         @endif
                 @csrf
-                <input class="form-control" type="text" name="id" id="id" placeholder="Código:" value="{{$produtos->id ?? ''}}" required><br>
-                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome:" value="{{$produtos->nome ?? ''}}" required><br>
-                <input class="form-control" type="text" name="preco" id="preco" placeholder="Preço:" value="{{$produtos->preco ?? ''}}" required><br>
-                <input class="btn btn-primary" type="submit" value="@if(isset($produtos)) Editar @else Cadastrar @endif">
+                <input class="form-control" type="text" name="id" id="id" placeholder="Código:" value="{{$estados->id ?? ''}}" required><br>
+                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome:" value="{{$estados->nome ?? ''}}" required><br>
+                <input class="form-control" type="text" name="sigla" id="sigla" placeholder="Sigla:" value="{{$estados->sigla ?? ''}}" required><br>
+                <input class="btn btn-primary" type="submit" value="@if(isset($estados)) Editar @else Cadastrar @endif">
             </form>
     </div>
 @endsection

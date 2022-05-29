@@ -1,9 +1,9 @@
 @extends('templates.template')
 @section('content')
-<h1 class="text-center">Produtos</h1> <hr>
+<h1 class="text-center">Estados</h1> <hr>
 
 <div class="text-center mt-3 mb-4">
-    <a href="{{url('produtos/create')}}">
+    <a href="{{url('estados/create')}}">
         <button class="btn btn-success">Cadastrar</button>
     </a>
 </div>
@@ -14,24 +14,24 @@
         <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Título</th>
-            <th scope="col">Preço</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sigla</th>
             <th scope="col">Ações</th>
         </tr>
         </thead>
         <tbody>
 
-        @foreach($produtos as $produto)
+        @foreach($estados as $estado)
             <tr>
-                <th scope="row">{{$produto->id}}</th>
-                <td>{{$produto->nome}}</td>
-                <td>{{$produto->preco}}</td>
+                <th scope="row">{{$estado->id}}</th>
+                <td>{{$estado->nome}}</td>
+                <td>{{$estado->sigla}}</td>
                 <td>         
-                    <a href="{{url("produtos/$produto->id/edit")}}">
+                    <a href="{{url("estados/$estado->id/edit")}}">
                         <button class="btn btn-primary">Editar</button>
                     </a>
 
-                    <a href="{{url("produtos/$produto->id")}}">
+                    <a href="{{url("estados/$estado->id")}}">
                         <button class="btn btn-danger">Deletar</button>
                     </a>
                 </td>

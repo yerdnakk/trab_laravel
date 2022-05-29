@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
 </head>
 <body>
+    <a href="/">Home</ion-icon></a>
+    <a href="/pessoas">Pessoas</a>
+    <a href="/produtos">Produtos</a> 
+    <a href="/cidades">Cidades</a>
+    <a href="/estados">Estados</a>
     @yield('content')
 </body>
 </html>
