@@ -8,11 +8,29 @@
     <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
 </head>
 <body>
-    <a href="/">Home</ion-icon></a>
-    <a href="/pessoas">Pessoas</a>
-    <a href="/produtos">Produtos</a> 
-    <a href="/cidades">Cidades</a>
-    <a href="/estados">Estados</a>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">           
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/pessoas">Pessoas</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link active" aria-current="page" href="/produtos">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/cidades">Cidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/estados">Estados</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     @yield('content')
 </body>
 </html>
