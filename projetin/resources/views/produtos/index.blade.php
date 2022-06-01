@@ -25,7 +25,7 @@
             <tr>
                 <th scope="row">{{$produto->id}}</th>
                 <td>{{$produto->nome}}</td>
-                <td>{{$produto->preco}}</td>
+                <td>{{$produto->preco}} R$</td>
                 <td>         
                     <a href="{{url("produtos/$produto->id/edit")}}">
                         <button class="btn btn-primary">Editar</button>
