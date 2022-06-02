@@ -25,12 +25,28 @@
                 <input class="form-control" type="date" name="nascimento" id="nascimento" placeholder="Nascimento:" value="{{$pessoas->nascimento ?? ''}}" required><br>
                 <select class="form-control" name="produto" id="produto" required>             
                     @foreach($produtos as $produto)
-                        <option value="{{$produto->id}}">{{$produto->nome}}</option>
+                        @if(isset($pessoas))
+                            @if($pessoas->produto == $produto->id)                  
+                                <option value="{{$produto->id}}" selected>{{$produto->nome}}</option>
+                            @else
+                                <option value="{{$produto->id}}">{{$produto->nome}}</option>
+                            @endif
+                        @else
+                            <option value="{{$produto->id}}">{{$produto->nome}}</option>
+                        @endif
                     @endforeach
                 </select><br>
                 <select class="form-control" name="cidade" id="cidade" required>             
                     @foreach($cidades as $cidade)
-                        <option value="{{$cidade->id}}">{{$cidade->nome}}</option>
+                        @if(isset($pessoas))
+                            @if($pessoas->cidade == $cidade->id)                  
+                                <option value="{{$cidade->id}}" selected>{{$cidade->nome}}</option>
+                            @else
+                                <option value="{{$cidade->id}}">{{$cidade->nome}}</option>
+                            @endif
+                        @else
+                            <option value="{{$cidade->id}}">{{$cidade->nome}}</option>
+                        @endif
                     @endforeach
                 </select><br>
                 <input class="btn btn-primary" type="submit" value="@if(isset($pessoas)) Editar @else Cadastrar @endif">

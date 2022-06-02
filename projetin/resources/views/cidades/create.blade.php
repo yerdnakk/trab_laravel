@@ -22,10 +22,17 @@
                 @csrf
                 <input class="form-control" type="text" name="id" id="id" placeholder="Código:" value="{{$cidades->id ?? ''}}" required><br>
                 <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome:" value="{{$cidades->nome ?? ''}}" required><br>
-                <select class="form-control" name="estado" id="estado" required>
-                
+                <select class="form-control" name="estado" id="estado" required>  
                     @foreach($estados as $estado)
-                        <option value="{{$estado->id}}">{{$estado->nome}}</option>
+                        @if(isset($cidades))
+                            @if($cidades->estado == $estado->id)                  
+                                <option value="{{$estado->id}}" selected>{{$estado->nome}}</option>
+                            @else
+                                <option value="{{$estado->id}}">{{$estado->nome}}</option>
+                            @endif
+                        @else
+                            <option value="{{$estado->id}}">{{$estado->nome}}</option>
+                        @endif
                     @endforeach
                 </select><br>
                 <input class="btn btn-primary" type="submit" value="@if(isset($cidades)) Editar @else Cadastrar @endif">
